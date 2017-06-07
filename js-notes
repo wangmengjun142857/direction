@@ -1,0 +1,712 @@
+jQuery是一个javascript库
+    举例比如：小学生在写作文
+    直接使用js编写代码就相当于 需要学生自己一个一个汉字的去组成词语以及句子去写作文！
+    js库 相当于是一个汉语词典库 里面已经包含了许多优秀的组成好的词语以及句子，可以供学生套用！
+    使用汉语词典库里面的词语以及句子，依然需要遵循汉语的语法规则！
+    使用js库（jQuery）需要遵循js的语法规则！
+    
+    js是一门嵌入到html文档中由浏览器执行的程序语言！
+    
+一、使用js
+    1.内嵌
+        <script type="text/javascript">
+            console.log('孙胜利');
+            alert('孙胜利');
+        </script>
+    2.外部引入
+        <script type="text/javascript" src="js文件的路径"></script>
+        注意点：js文件的 文件编码最好和html文档的文件编码一致！
+    
+    3、<script>标签位置：
+        原则上可以放在页面的任何位置，只是摆放位置决定了它的执行时机，因为我们的页面代码是自上而下执行的！
+        一个html文档中可以放任意多个script标签
+二、语句（概念性的东西）
+    1、语句就是程序世界里面的话
+        我们是怎么使用现实生活中的语言的？比如中文！无非就是一句一句的话！
+        那么程序世界里的语言也不例外，程序语言也是由一条一条的语句构成的！
+ 
+    2、分号
+        每条语句通常以分号（;）结尾。就像我们现实生活中写信或者写作文时一句话结尾要加句号。
+        其实JavaScript语言本身并不强制要求语句结尾加分号，但是语句结尾加分号是一个良好的习惯，也可以让代码更易于别人阅读，加分
+        号也可以实现在一行书写多条语句。
+    3、合理利用空白
+        空白是指英文状态下的tab，空格等，这些符号不会影响代码的执行,所以可以利用这些符号让代码观看起来更加容易
+        
+三、变量和数据类型   
+    1、变量
+        1）变量是什么？
+            变量可以看成是我们的代码在运行过程中用来 临时保存数据 的容器，你可以把它想象成现实生活中存东西的容器！
+        2）怎么创建变量
+            使用var关键字后面接上变量的名字即可（中间用空白隔开），并且可以在定义的同时就把要保存的数据存进去！
+            var sunshengli=1;
+            
+            变量名命名规范
+                1>第一个字符必须是一个字母、下划线（_）或一个美元符号（$）
+                2>其他字符可以是字母、下划线、美元符号或数字，当然也可以没有
+                关键字或者保留字是不能用来做变量名的（因为它们在JavaScript中有其他特殊作用或者未来有特殊作用）
+        3）怎么使用变量
+    2、基本数据类型
+        JavaScript中的基本数据类型：数字、字符串、布尔值
+        1）数字
+            例：
+                      将数字类型的数据存进变量！
+                      var sunshengli=100;
+        2）字符串
+            var $1='孙胜利';
+            var $2="孙胜利";
+            var $3='';
+        3）布尔类型
+            布尔类型的数据只有两个可能的值：true或者false
+            这种类型的数据只有两个可能，所以可以用在一些特定的场合比如考试是否及格，性别，等等只有两种可能的地方！
+            var sex=true;
+    3、js中特殊的值：undefined和null
+        JavaScript有两个特殊的值，undefined和null
+            undefined：
+                当我们使用一个变量，而该变量尚未被赋值时，或者读取一个不存在的对象属性的时候，就会返回undefined
+                var test;
+            null：
+                null用于表示值确实已经定义，但是这个值却不属于任何一种合法的类型，相当于我们定义了一个没有值得值
+                var test1=null;
+四、注释
+    //在控制台输出一条信息！
+    //单行注释！
+    console.log("我是孙胜利！");//在控制台输出一条信息！
+    /*
+    这边是多行注释！
+    dwqdwqdwqdwq
+    dwqdwqdwqdqw
+    */
+五、js中的对象
+    1、js中的对象是什么？
+        对象是复合值，它将多个值聚合在一起，一个对象可以拥有多个值！
+        js中的对象是根据某种 引用类型 创建出来的 实例！
+            引用类型：
+                引用类型是一种数据结构，用于将数据和功能组织在一起 比如：
+                现实生活中对某种类型的事物的定义（描述）
+                人：姓名、年龄、性别、身高、智商、思维
+            实例：
+                实际案例
+            具体的一个人比如"张三"就是这个  ”描述“ 的具体实例！
+        总结：张三就是这个 ”对人描述“的具体实例 即 对象， 张三的年龄，身高，思维这些就是张三这个对象里面包含的值（专业一点叫法叫属性或者叫成员也可以）！
+    2、常用的引用类型
+        1）Object引用类型
+            怎么创建 Object引用类型 的具体实例（对象）呢？
+            方法一：
+           	var zhangsan=new Object();
+           	zhangsan.name='张三';
+           	zhangsan.age=18;
+           	zhangsan.info='张三是一名学生';
+           	对一个对象进行赋值，只需要在对象名后面用点接上一个类似于变量名的单词即可！
+           	使用里面的值也是同理！
+            方法二：
+                var zhangsan={name:'张三',age:18,info:'张三是一名学生'}
+                迭代对象属性：for...in语句
+                for(var i in zhangsan){
+                    console.log(zhangsan[i]);//这边必须用[]不能用.，这就是规定，记住就好了！
+                }
+	2）Function引用类型，使用Function引用类型创建的对象我们也称为函数	
+	    创建函数：
+		function 函数名 () { 
+			各种javascript语句 
+		}
+		浏览器加载script元素后，就会立即逐条执行js语句，我们可以将一些语句封装在一个函数内，浏览器在遇到调用这个函数的语句                        
+		之前不会执行被封装得代码！
+		//定义函数，创建Function引用类型的对象
+		function func1(){
+		    //放各种js语句
+		    alert('我是函数func1');
+		}
+	    怎么调用函数？
+		函数名();
+		func1();
+	    函数还可以这么创建：
+            	var 函数名=function(){
+		各种javascript语句
+            	};
+		//定义函数，创建Function引用类型的对象，这种方式定义函数，后面需要接上分号
+		var func2=function(){
+		    //放各种js语句
+		    console.log('您调用了func2');
+		};
+		func2();
+	    函数可以有参数！
+		//函数定义的时候圆括号里面的参数我们称为 “形式参数”
+		//参数可以有默认值,设置默认值注意点：根据参数列表，从右往左给默认值
+		function func1(a,b=1000,c=10000){
+		    //本函数内部就可以使用传进来的数据啦！
+		    console.log(a);
+		    console.log(b);
+		    console.log(c);
+		    console.log('我是func1');
+		}
+		//调用函数的时候可以传数据给函数,多个数据中间用逗号隔开
+		func1(10,100,1000);
+	    函数可以有返回值！即将一个值返回到调用它的地方：
+		//不管函数有没有返回值，函数内部语句执行完会返回到调用它的地方，继续执行
+		function func1(){
+		    alert(1);
+		    return 100;//函数内部可以返回数据给调用它的地方,函数内部return之后的语句不会在执行
+		}
+		var a=func1();
+	    函数到底有什么功能呢？
+		function add(a,b){
+		    return a+b;
+		}
+		alert(add(1,2));
+		
+		alert(add(10,20));
+		
+		alert(add(100,20));
+	    变量在函数外与内的不同
+		var test=100;//在函数外面定义的变量我们称为全局变量,在变量定义之后的整个页面都可以使用！
+		function add(a,b){
+		    var test1='我是test1';//局部变量，只能在本函数内部使用！
+		    return a+b;
+		}
+		add(1,1);
+		//alert(a);
+	    
+	    function func1(a,b,c) {
+		
+	    }
+	    //函数有默认的属性 length，里面存储的是形式参数的个数
+	    alert(func1.length);
+	3）Array引用类型，使用Array引用类型创建的对象我们也称为数组
+	   数组：是数据（值）的集合，数组里面的值，我们可以称作是这个数组的元素！
+	   数组里面的元素的数据类型 可以是 基本的数据类型 ，甚至是数组或者Object引用类型的对象
+	   创建数组
+                var arr1 = new Array();
+		//数组里面放数据是有序号，这些序号我们可以称作索引！序号应该为数字类型，一般从0开始
+		arr1[0]=110;
+		arr1[1]='120';
+		//数组里面可以放数组
+		arr1[2]=new Array();
+		arr1[2][0]=100;
+		arr1[2][1]=120;
+		alert(arr1[2][1]);
+		
+		arr1[3]=911;
+		arr1[10]=100;
+		arr1[11]={};
+		//数组里面可以放Object引用类型的对象
+		arr1[12]={
+		    name:'孙胜利'
+		    };
+		alert(arr1[12].name);
+		
+		//直接在创建数组的时候就往里面赋值
+		var colors = new Array("red", "blue", "green");
+		alert(colors[0]);
+		
+		创建数组的时候new也可以省略！
+		
+	    其它创建方法：(数组字面量)
+                      var colors=[];
+		      var colors=["red", "blue", "green"];
+	4）基本包装类型（特殊的引用类型）
+	    大家看到基本类型的数据 调用里面的方法的时候，不要感觉到奇怪即可！
+	    var s1='sunshengli';
+	    //从字符串中取出一段字符
+	    alert(s1.substring(2,7));
+	    str1.name='dwdwdw';//这么写是不行的
+	    alert(str1.name);
+    3、附加知识点
+       1、针对Object引用类型的对象 附加知识点：
+	   1）Object引用类型的对象内部还可以创建对象作为某个属性的值,数组
+		var obj1={
+		    name:'张三',
+		    age:18,
+		    info:'张三是一名学生',
+		    test1:{
+			a:1,
+			b:2
+		    },
+		    test2:['110',120]
+		};
+		//alert(obj1.test1.b);
+		//alert(obj1.test2[1]);
+           2）函数放在Object类型的对象内部叫做那个对象的方法，在函数内部如果需要使用本对象的某个属性可以使用this来表示本对象
+		var obj1={
+		     name:'张三',
+		     test:function(){
+			 alert(this.name);
+		     }
+		 };
+		 obj1.test();
+	   3）属性与方法的添加和删除，修改
+	        var obj1={
+		    name:'张三',
+		    test:function(){
+			alert(this.name);
+		    }
+		};
+		obj1.age=18;
+		obj1.info='张三是一名学生';
+		alert(obj1.info);
+		delete obj1.info;//删除对象里面的属性
+		obj1.age=19;
+		alert(obj1.info);
+           4）检测对象是否拥有某个属性
+	        var obj1={
+		    name:'张三',
+		    test:function(){
+			alert(this.name);
+		    }
+		};
+		alert('name' in obj1);//使用in来检查对象里面是否含有某个属性或方法，以字符串形式写出！
+        2、针对数组 附加知识点
+	    JavaScript数组对象内建的常用方法：
+            concat()、join()、pop()、push()、reverse()、shift()、slice()、sort()、splice()、unshift()
+六、JavaScript运算符、流程语句
+    1、常用运算符
+       1）什么是运算符
+          说白了就是一些符号，这些符号可以将变量或者数据进行某种运算
+       2）js中常用的运算符
+	  1> +、-、*、/、%
+	     var a=100;
+	     var b=100;
+	     alert(a+b);
+	  2> ++、--
+		/*
+		++代表自增，用于变量
+		    var a=10;
+		    a++;//a=a+1;
+		    alert(a);
+		++又分为 前++ 和 后++
+		前++：代表在参与其他运算（操作）的时候，先进行自增运算，然后把运算后的值参与其他的操作
+		后++：代表在参与其他运算（操作）的时候，先把原来的值参与操作，然后再进行自增操作
+		    var a=10;
+		    alert(a++);
+		    alert(a);
+		    
+		    var a=10;
+		    //alert(++a+1);//12
+		    alert((a++)+1);//11
+		如果直接就单独的 前++那么和后++没有区别
+		*/
+	  3、 <、<=、>、>=
+	      得到的是布尔值
+	      <当符号左边的数据小于右边的数据的时候，运算出的结果为true否则就是false
+	      alert(11<10);
+	      alert(1<=10);
+	  4、==、!=
+	      得到的是布尔值
+	      alert(10==10);
+	      alert(100!=10);
+	  5、===、!==	      
+	      ===代表全等(数值要相等，类型也要相等)	      
+	      !==不全等
+	  6、&&、||
+	      && 逻辑与
+		左右两边的数据，全部为true，那么结果就是true 否则结果就是false
+		alert((10<100) && (200<100));
+	      || 逻辑或
+	        左右两边只要有一个为true，那么结果及时true
+                alert((10<100) || (200<100));
+	  7、= 赋值操作符
+	  8、+
+	      连接字符串
+		var a='我是';
+		var b='孙胜利';
+		var c=a+b;//将两个字符串连接起来
+	  9、?:
+	      三元运算符
+	      如果这边的数据是真?执行我:否则执行后面这边的代码;
+		var a=100;
+		var b=100;
+		a<b ? alert('真的') : alert('假的');
+		a==b ? alert('真的') : alert('假的');
+	  注意：多个运算符在一起预算的时候，我们为了增加可读性并且确保运算的顺序，
+	        我们可以使用()来增加 执行的优先级别
+		合理的理由(),增加代码的可读性！
+       3）相等运算符（==）和全等运算符（===）知识补充
+	    1>相等运算符仅判断值是否相等，而不关心类型，全等运算符既判断值也判断类型
+	    2>上面可能会遇到数据类型的自动转换，我们顺便学习一下显示类型转换
+	       数字转换为字符串
+		    常见数字转换为字符串的实用方法：
+                           toString()
+				var a=100;
+				//typeof 变量名;可以检测基本数据的 具体类型！
+				alert(typeof a);
+				var b=a.toString();
+				alert(typeof b);//将数字转换为字符串
+				alert(typeof a);
+                           toFixed()
+				var a=100.99;
+				//typeof 变量名;可以检测基本数据的 具体类型！
+				alert(a);
+				var b=a.toFixed(1);//将数字转换为小数形式的字符串,四舍五入
+				alert(b);//将数字转换为字符串
+	       字符串转换为数字
+		    常见字符串转换为数字的实用方法：
+                           Number()
+				var str1='100';
+				//将字符串转换为数字类型，如果字符串含有非数字的字符，那么转换的结果是NaN
+				//alert(typeof Number(str1));
+                           parseInt()
+				var str1='100.222dwdwdw';
+				//转换为整数，它会将字符串中第一个非数字字符之前的所有数字截取出来！
+				alert(parseInt(str1));
+                           parseFloat()
+				var str1='100.222dwdwdw';
+				//转换为小数，它会将字符串中第一个非数字字符之前的所有数字截取出来！
+				alert(parseFloat(str1));
+	    3>基本类型的数据 比较运算符(==) 比较的是值，而对象比较的是引用。
+	      理解这句话，我们需要先解决另外一个问题
+		我们将一个基本类型的变量赋给另外一个变量的时候，其实相当于是重新赋值了一份
+		    var a=100;
+		    var b=a;//重新复制了一份,a和b已经没有关系了
+		    a=10;
+		    alert(a);
+		    alert(b);
+		对象赋给另外一个变量的时候其实相当于起了一个别名
+		    var obj1={
+			name:'zhangsan',
+			age:18
+		    };
+		    var obj2=obj1;//对象赋给其他变量的时候其实赋的是引用,相当于给这边变量起了一个别名!
+		    obj1.info='我是张三';
+		    obj1.name='lisi';
+		    alert(obj2.name);
+		    
+		    var arr1=[10,100,100];
+		    var arr2=arr1;//相当于起了一个别名
+		    arr1[3]='孙胜利';
+		    alert(arr2);
+		    
+		对象比较：
+		    /*
+		    var a=100;
+		    var b=100;
+		    alert(a==b);
+		    */
+		    var obj1={name:'zhangsan'};
+		    var obj2={name:'zhangsan'};
+		    var obj3=obj1;
+		    alert(obj1==obj2);//输出false,就是因为js中对象进行比较的时候，比较的是引用
+		    alert(obj1==obj3);//true
+    2、流程语句
+	控制程序运行顺序流程的语句
+	1）if语句
+	    1>if(条件)一条语句;
+		如果()里面的条件结果为true，则执行后面的那条语句
+		如果为false就不执行
+		var a=80;
+		if(a==100) alert('恭喜您！考试得到满分！');//if可以控制后面的一条语句
+	    2>if语句控制多条语句，将语句放在后面的花括号内即可！
+		var a=80;
+		if(a==100){//花括号可以控制后面的多条语句
+		    alert('恭喜您！考试得到满分！');
+		    alert('1');
+		}
+	    
+	    3>if语句可以配合0个或多个else if子语句来使用
+		var a=70;
+		if(a==100){//花括号可以控制后面的多条语句
+		    alert('恭喜您！考试得到满分！');//if可以控制后面的一条语句
+		}else if(a>=85) {
+		    alert('您的考试成绩优秀！');
+		}else if (a>=60) {
+		    alert('恭喜您！考试过关！');
+		}
+	    4>if语句还可以配合一个else子语句来使用
+		var a=50;
+		if(a==100){//花括号可以控制后面的多条语句
+		    alert('恭喜您！考试得到满分！');//if可以控制后面的一条语句
+		}else if(a>=85) {
+		    alert('您的考试成绩优秀！');
+		}else if (a>=60) {
+		    alert('恭喜您！考试过关！');
+		}else{
+		    alert('很遗憾！您考试不及格，等待来年补考！');
+		}
+	2）for语句，循环用的
+	    for(初始化语句;条件判断语句;自增语句){
+		这边的代码就是重复执行的！
+	    }
+	    for语句执行流程：
+		首先执行一次初始化语句
+		执行条件判断语句,如果为true则执行一次下面的语句块（花括号里面的代码）
+		回到圆括号内，执行自增语句
+		在执行条件判断语句，如果为true则再执行下面的语句块
+		回到圆括号内，执行自增语句
+		在执行条件判断语句，如果为true则再执行下面的语句块
+		for(var i=0;i<10;i++){
+		    alert(i);
+		}
+		//遍历数组的所有元素
+		var arr1=['孙胜利','私房库','sifangku.com'];
+		for(var i=0;i<arr1.length;i++){
+		    alert(arr1[i]);
+		}
+	3）while语句,也是循环语句
+		var a=10;
+		while (a>0) {
+		    alert(a);
+		    a--;
+		}
+	4）break语句
+	    跳出循环语句或者switch语句
+	    var a=10;
+	    while (a>0) {
+		if (a==8) {
+		    break;//跳出循环语句
+		}
+		alert(a);
+		a--;
+	    }
+	    for(var i=0;i<10;i++){
+		if (i==1) {
+		    break;
+		}
+		alert(i);
+	    }
+	循环语句内可以放if语句，if语句内也可以放循环语句！
+	只要语句的语法正确无误都可以相互嵌套！
+	5）continue语句
+	    用于循环语句，作用：跳出本次循环！
+	    for(var i=0;i<10;i++){
+		if ((i==1) || (i==3)) {
+		    continue;//跳出这一次循环
+		}
+		alert(i);
+	    }
+	6）switch语句,需要配合case语句使用
+	    switch(表达式){
+		case 具体的值1:各种语句
+		case 值2：各种语句
+		case 值3:各种语句
+		case 值4：各种语句
+	    }
+	    一旦和某条case语句匹配上，就会执行那个case后面的语句！
+	    并且在这case之后的所有case子语句将不再进行判断！所有我们一般case后面会加上break语句
+	    switch语句内最后面一个分支可以放default
+	    var a=4;
+	    switch(a){
+		case 1:
+		    alert('一');
+		    break;
+		case 2:
+		    alert('二');
+		    break;
+		case 3:
+		    alert('三');
+		    break;
+		//...
+		default:
+		    alert('没有执行任何一个case分支语句');
+	    }
+七、错误处理
+    JavaScript使用try...catch语句处理错误。
+    try {
+	//你可以把，可能出现错误的代码放在这边
+	//如果代码全部执行正确，那么后面的catch子语句会被忽略
+	//如果这边的代码执行出错，那么会立刻终止执行，然后去执行catch后面的语句块
+	//这边所说的错误指的是一些逻辑错误！不能是语法错误！
+	var a='孙胜利';
+	alert(a1);
+    } catch(e) {
+	console.log(e.message);
+    }finally{
+	alert('不管try后面的语句是否执行出错，我是肯定要执行的！');
+    }
+八、文档对象模型（DOM）
+    1、元素层次关系
+	在学习文档对象模型之前我们先来学习一下html元素层次的关系
+	1）父子关系      
+	2）祖先-后代关系
+	3）兄弟关系
+    2、什么是文档对象模型？
+	文档对象模型（DOM）是针对HTML和XML文档的一个API（应用程序编程接口）,DOM描绘了一个层次化的节点树，允许开
+	发人员添加、移除和修改页面的某一部分。它是一种让我们能够与HTML文档交互的机制！
+	说白了DOM就是一个提供给程序语言（比如我们的js）操作页面中html文档的的接口，再直白一点：就是提供了一整套让程序
+	语言操作我们页面中元素的方案！
+	DOM不属于某种特定的语言，它是由W3C指定并维护的标准。
+    3、使用DOM
+	我们的JavaScript这门语言是怎么使用DOM这个接口来操作页面中的元素的呢？
+	1）在JavaScript中我们可以使用全局变量document来使用DOM，它其实是一个对象！
+	   我们可以通过document来使用DOM这个接口，你可以把document看出是我们页面的html文档，它是一个对象
+	   里面保存了我们当前文档信息，我们通过它也可以修改我们的文档信息！
+	   document对象中提供的用于查找元素的方法：
+	    1）getElementById(id)		返回具有指定id值得元素
+	    2）getElementsByClassName(class)	返回具有指定class值得元素集合
+		var divs=document.getElementsByClassName('auto');
+		for(var i=0;i<divs.length;i++){
+		    divs[i].style.width='200px';
+		}
+	    3）getElementsByTagName(tag)		返回参数指定标签名字对应的元素集合
+	    4）querySelector(selector)		返回匹配指定css选择器的第一个元素
+	    5）querySelectorAll(selector)		返回匹配指定css选择器的元素集合
+	     以上方法返回的数据也是一个对象（或者对象数组），返回的对象内有下列常见属性：
+	     className、id、lang、tagName
+	     一般我们认为获取到的元素它的属性我们html元素对象里面都会有！
+		针对不同的元素，返回的对象内的属性也有些不同，比如获取的是img元素，那么返回的对象内还会有src属性
+		//获取到的是一个html元素对象
+		var div1=document.getElementById('div1');
+		alert(div1.className);
+		var img1=document.getElementById("img1");
+		alert(img1.src);
+	2）对返回对象中的属性做修改，浏览器中的页面会立刻做出响应！
+	    var img1=document.getElementById("img1");
+	    //alert(img1.src);
+	    //img1.src='http://img3.3lian.com/2013/v10/4/90.jpg';
+	    setTimeout("img1.src='http://img3.3lian.com/2013/v10/4/90.jpg'",2000);
+	3）修改CSS样式
+	    修改CSS样式可以通过返回对象中的style对象来设置的
+	    style对象里面包含很多很多的属性，那么我们平常设置的css属性它里面都有
+	    var div1=document.getElementById('div1');
+	    div1.style.width='200px';
+	    //div1.style.backgroundColor='#ccc';
+	    
+九、JavaScript 计时
+    1、延期执行代码
+       延期执行代码就是设定在未来的某个时间执行预定代码
+       这个需求我们通过setTimeout()方法即可实现，相当容易！
+       //setTimeout函数我们一般会传递一个函数进去，作为第一个参数
+	function func1() {
+	    alert('哈哈');
+	}
+	setTimeout(func1,2000);
+	setTimeout(function(){
+		alert('嘿嘿！');
+	    },4000);
+	取消：
+	//setTimeout函数我们一般会传递一个函数进去，作为第一个参数
+	function func1() {
+	    alert('哈哈');
+	}
+	var set1=setTimeout(func1,2000);
+	var set2=setTimeout(function(){
+		alert('heihei');
+	    },4000);
+	clearTimeout(set1);
+	clearTimeout(set2);
+    2、定期执行代码
+	定期执行代码就是设定每间隔多久即执行预定代码
+	这个需求我们通过setInterval()方法即可实现，相当容易！
+	//setTimeout函数我们一般会传递一个函数进去，作为第一个参数
+	function func1() {
+	    console.log('哈哈');
+	}
+	var setI1=setInterval(func1,2000);
+	clearInterval(setI1);
+	
+知识点补充：BOM(浏览器对象模型)
+
+简单介绍，了解即可！
+1、BOM(浏览器对象模型)是JavaScript访问浏览器窗口的一个接口,它提供了很多对象，用于访问浏览器的功能!
+   1）BOM的核心对象是window，它表示浏览器的一个实例，通过它可以操作我们的浏览器。
+      大家记住一点：你需要对浏览器操作，那么它肯定和window对象有关！
+	 比如：
+	 1> 弹出对话框向用户显示消息
+	    alert()
+	       由浏览器输出一些内容
+	    confirm()
+	       给用户一个确认提示
+	       确定则返回true，取消则返回false
+	    prompt()
+	       提示用户输入一些文本
+	       prompt(提示用户输入一些文本，这边写上提示的内容,'这些填默认值')
+	    系统对话框与在浏览器中显示的网页没有关系，也不包含HTML。它们的外观由操作系统及（或）浏览器设置定，而不是由CSS决定。
+	 2> 打开窗口(受到浏览器约束太多，不建议你使用！)
+	    open()
+	    window.open('http://sifangku.com','sunshengli','width=500,height=200,left=100,top=200,scrollbars=yes');
+	    接收4个参数，一般我们只用前三个参数即可：
+	       ①要加载的URL、
+	       ②窗口目标
+		  给新打开的窗口命名
+		  如果该参数指定了一个已经存在的窗口的名字，那么 open() 方法会直接使用已存在窗口，不会再创建一个新窗口。
+		  否则，会打开新的窗口，并将这个指定的名字赋值给打开的那个窗口！
+		  如果省略此参数，就会打开一个新的、未命名的窗口！
+		  第二个参数也可以是下列任意一个特殊的窗口名称：
+		     _self：代表自己当前这个窗口
+			setTimeout("window.open('http://baidu.com','_self')",3000);
+		     _parent：父级窗口
+		     _top：顶级祖先窗口
+		     _blank：省略参数时，就是使用这个值
+		    window.open('http://sifangku.com','sunshengli');
+		    setTimeout("window.open('http://baidu.com','sunshengli')",3000);
+	       ③一个特性字符串
+		  第三个参数是一个逗号分隔的设置字符串，下面列出了可以出现在这个字符串中的设置选项
+		     width  	数值  		表示新窗口的宽度。不能小于100
+		     height  	数值  		表示新窗口的高度。不能小于100 
+		     left  	数值  		表示新窗口的左坐标。不能是负值
+		     top  	数值  		表示新窗口的上坐标。不能是负值
+		     scrollbars yes或no  	表示如果内容在视口中显示不下，是否允许滚动。默认值为no
+		     下面这些属性兼容性不好，且受浏览器设置影响可能无效，所以不建议使用！
+		     menubar  	yes或no  	表示是否在浏览器窗口中显示菜单栏。默认值为no
+		     resizable  yes或no  	表示是否可以通过拖动浏览器窗口的边框改变其大小。默认值为no
+		     status  	yes或no  	表示是否在浏览器窗口中显示状态栏。默认值为no
+		     fullscreen yes或no		表示浏览器窗口是否最大化。仅限IE(并且受ie设置影响)
+		     location  	yes或no  	表示是否在浏览器窗口中显示地址栏。不同浏览器的默认值不同。如果
+						设置为no，地址栏可能会隐藏，也可能会被禁用（取决于浏览器）
+		     toolbar  	yes或no  	表示是否在浏览器窗口中显示工具栏。默认值为no
+		  如果第二个参数指定了一个已经存在的窗口的名字,这个参数将被忽略
+		  
+	       ④布尔值(新页面是否取代浏览器历史记录中当前加载页面，几乎不用)
+		  只在第二个参数命名的是一个存在的窗口才有用。
+		  true -  表示第一个参数url地址应该替换掉窗口浏览历史的当前条目。
+		  false - 在窗口浏览历史中创建一个新的条目（默认值）。
+	    返回值：返回的是一个对象（代表打开的那个窗口）
+	 3> 关闭窗口
+	    由window.open方法返回的代表窗口的对象.close();
+	    大多数浏览器只允许关闭由自己的js代码创建的窗口！
+	    var newW=window.open('http://sifangku.com','sunshengli','width=500,height=200,left=100,top=200,scrollbars=yes');
+	    setTimeout("newW.close()",3000);
+   2）screen对象
+	 screen对象有很多属性，具有浏览器兼容性问题，所以我们这边就列几个兼容性好的！
+	    height  	屏幕的像素高度
+	    width  	屏幕的像素宽度
+	    window.alert(screen.height);
+   3）location也是最有用的BOM对象之一
+        它提供了与当前窗口中加载的文档有关的信息，还提供了一些重定向(跳转)功能。
+	    location对象的属性：
+                hash 		"#test"  		返回URL中的hash（#号后跟零或多个字符），如果URL中不包含散列，则返回空字符串
+                host 		"www.sifangku.com:80"  	返回服务器名称和端口号（如果有）
+                hostname 	"www.sifangku.com"  	返回不带端口号的服务器名称
+                href 		"http://www.sifangku.com"  返回当前加载页面的完整URL。
+                pathname 	"/aaa/"  		返回URL中的目录和（或）文件名
+                port 		"8080"  		返回URL中指定的端口号。如果URL中不包含端口号，则这个属性返回空字符串
+                protocol 	"http:"  		返回页面使用的协议。通常是http:或https:
+                search 		"?a=test"  		返回URL的查询字符串。这个字符串以问号开头
+		使用location对象可以通过很多方式来改变浏览器的位置
+		location.assign("http://www.sifangku.com");
+		location.href="http://www.sifangku.com";
+		等等...
+   4）navigator对象
+	 该对象用于识别客户端浏览器，里面有很多属性，我们这边介绍一个最常用的属性即可！
+	 userAgent  	浏览器的用户代理字符串，不同的浏览器该属性的值是不一样的！
+	 if (userAU.indexOf('FIREFOX')>-1) {
+	    alert('火狐浏览器！');
+	}
+2、window对象有双重角色
+    在浏览器中，window对象有双重角色，它既是JavaScript访问浏览器窗口的一个接口，
+    又是JavaScript规定的全局对象(最上层、顶级的对象)。我们在全局作用域中定义了一个变量age
+    和一个函数func1()，对象等等！
+    它们被自动归在了window对象名下。
+    于是，可以通过window.age访问变量age，可以通过window.func1()访问函数func1()。
+    比如screen、location、navigator以及我们用于和DOM打交道的document对象其实就是window的属性！
+    在全局范围内定义的变量，函数，对象，我们可以省略前面的window！
+    
+    
+注：其实DOM与BOM都不属于javascript语言的核心，它们是宿主环境提供给我们的操作接口！
+    
+    我们后面要学习的jQuery在很大程度上，解决了兼容性问题以及，提供了许多方便且强大的方法!
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
