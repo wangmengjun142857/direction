@@ -35,3 +35,67 @@ substring() 方法用于提取字符串中介于两个指定下标之间的字�
                       注意：1. 返回的内容是从 start开始(包含start位置的字符)到 stop-1 处的所有字符，其长度为 stop 减start。
                            2. 如果参数 start 与 stop 相等，那么该方法返回的就是一个空串（即长度为 0 的字符串）。
                            3. 如果 start 比 stop 大，那么该方法在提取子串之前会先交换这两个参数。
+substr() 方法从字符串中提取从 startPos位置开始的指定数目的字符串。
+                      语法:stringObject.substr(startPos,length)
+                      starPos:必需。要提取的子串的起始位置。必须是数值。
+                      length:可选。提取字符串的长度。如果省略，返回从stringObject的开始位置starPos到stringObject的结尾的字符。
+                      注意：如果参数startPos是负数，从字符串的尾部开始算起的位置。也就是说，-1 指字符串中最后一个字符，-2 指倒数第二个字符，以此类推。
+                           如果startPos为负数且绝对值大于字符串长度，startPos为0。
+Math对象，提供对数据的数学计算。(具体见w3school)
+                      使用 Math 的属性和方法，代码如下：
+                          <script type="text/javascript">
+                            var mypi=Math.PI; 
+                            var myabs=Math.abs(-15);
+                            document.write(mypi);
+                            document.write(myabs);
+                          </script>
+
+                      运行结果:
+
+                      3.141592653589793
+                      15
+                      注意：Math 对象是一个固有的对象，无需创建它，直接把 Math 作为对象使用就可以调用其所有属性和方法。这是它与Date,String对象的区别。
+      向上取整ceil()
+          ceil() 方法可对一个数进行向上取整.     x:必需。必需是一个数值。
+          注意：它返回的是大于或等于x，并且与x最接近的整数。
+      向下取整floor()         (高斯函数)
+          floor() 方法可对一个数进行向下取整。
+          语法:Math.floor(x)         x ：必需。必须是一个数值。
+          注意：返回的是小于或等于x，并且与 x 最接近的整数。
+      四舍五入round()
+          round() 方法可把一个数字四舍五入为最接近的整数。
+          语法:Math.round(x)        x ：必需。必须是一个数值。
+          注意：1. 返回与 x 最接近的整数。
+               2. 对于 0.5，该方法将进行上舍入。(5.5 将舍入为 6)
+               3. 如果 x 与两侧整数同等接近，则结果接近 +∞方向的数字值 。
+      随机数 random()
+          random() 方法可返回介于 0 ~ 1（大于或等于 0 但小于 1 )之间的一个随机数。
+          语法：Math.random();
+          注意：返回一个大于或等于 0 但小于 1 的符号为正的数字值。
+                我们取得介于 0 到 1 之间的一个随机数，代码如下：
+                    <script type="text/javascript">
+                      document.write(Math.random());
+                    </script>
+                运行结果：
+                0.190305486195328  
+          注意:因为是随机数，所以每次运行结果不一样，但是0 ~ 1的数值
+                获得0 ~ 10之间的随机数，代码如下:
+                    <script type="text/javascript">
+                      document.write((Math.random())*10);
+                    </script>
+                    运行结果：8.72153625893887
+                计算不大于10的整数。代码如下：
+                    <script type="text/javascript">
+                        document.write(Math.round((Math.random())*10));
+                    </script>
+
+
+
+
+
+
+
+
+
+
+
