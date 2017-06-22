@@ -10,3 +10,25 @@
    document.write("req1的值:"+req1+"<br/>");
    document.write("req2的值:"+req2+"<br/>");
    document.write(req1+"与"+req2+"和:"+sumq);
+   
+    //要创建一个运行于无穷循环中的计数器，我们需要编写一个函数来调用其自身。在下面的代码，当按钮被点击后，输入域便从0开始计数。
+    //困惑：怎么添加一个按钮，让其停止计数。
+    <!DOCTYPE HTML>
+    <html>
+    <head>
+    <script type="text/javascript">
+    var num=0;
+    function numCount(){
+     document.getElementById('txt').value=num;
+     num=num+1;
+     setTimeout("numCount()",1000);
+     }
+    </script>
+    </head>
+    <body>
+    <form>
+    <input type="text" id="txt" />
+    <input type="button" value="Start" onClick="numCount()" />
+    </form>
+    </body>
+    </html>
