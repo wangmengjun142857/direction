@@ -1,39 +1,5 @@
-  //7,8和9行，有没有var有区别吗？（已解决）
-  function  app2(x,y)
-  { var sum,x,y;
-    sum = x * y;
-    return sum ; 
-  }
-   req1 = app2(5,6);  //var req1 = app2(5,6);
-   req2 = app2(2,3);  //var req2 = app2(2,3);
-   sumq = req1 + req2;   //var sumq = req1 + req2; 
-   document.write("req1的值:"+req1+"<br/>");
-   document.write("req2的值:"+req2+"<br/>");
-   document.write(req1+"与"+req2+"和:"+sumq);
-   
-    //要创建一个运行于无穷循环中的计数器，我们需要编写一个函数来调用其自身。在下面的代码，当按钮被点击后，输入域便从0开始计数。
-    //困惑：怎么添加一个按钮，让其停止计数。 (已解决)
-    <!DOCTYPE HTML>
-    <html>
-    <head>
-    <script type="text/javascript">
-          var num=0;
-          var i;                                        //不声明，不会显示错误。不知道原因.
-          function numCount(){
-           document.getElementById('txt').value=num;
-           num=num+1;
-           i = setTimeout("numCount()",1000);           //若为var i ...,则错误。但是不
-           }
-            function stopCount() {
-            clearTimeout(i);
-            }
-    </script>
-    </head>
-    <body>
-          <form>
-          <input type="text" id="txt" />
-          <input type="button" value="Start" onClick="numCount()" />
-          <input type="button" value="Stop" onClick="stopCount()" />
-          </form>
-    </body>
-    </html>
+  //定义变量，有没有var有区别吗？（已解决）
+  
+  //要创建一个运行于无穷循环中的计数器，我们需要编写一个函数来调用其自身。在下面的代码，当按钮被点击后，输入域便从0开始计数。
+  //困惑：怎么添加一个按钮，让其停止计数。 (已解决)
+
