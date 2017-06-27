@@ -116,9 +116,39 @@ JavaScript 计时器
     取消计时器clearTimeout()
           setTimeout()和clearTimeout()一起使用，停止计时器。
           语法:clearTimeout(id_of_setTimeout)
-          参数说明:id_of_setTimeout：由 setTimeout() 返回的 ID 值。该值标识要取消的延迟执行代码块。        
-                  
-            
+          参数说明:id_of_setTimeout：由 setTimeout() 返回的 ID 值。该值标识要取消的延迟执行代码块。
+
+History 对象
+          history对象记录了用户曾经浏览过的页面(URL)，并可以实现浏览器前进与后退相似导航的功能。
+          注意:从窗口被打开的那一刻开始记录，每个浏览器窗口、每个标签页乃至每个框架，都有自己的history对象与特定的window对象关联。
+          语法：window.history.[属性|方法]                                   注意：window可以省略。
+                    length：返回浏览器历史列表中的 URL 数量；
+                    back（）：加载 history 列表中的前一个 URL ；     语法：window.history.back();  =  window.history.go(-1);
+                    forward（）：加载 history 列表中的下一个 URL ；  语法：window.history.forward(); = window.history.go(1);
+                    go（）：加载 history 列表中的某个具体的页面 。    语法：window.history.go(number); 
+                              1:前一个；0：当前；-1：后一个；其它数值：要访问的 URL 在 history 的 URL 列表中的相对位置。
+                             
+Location 对象
+          location用于获取或设置窗体的 URL ，并且可以用于解析 URL 。
+          语法：location.[属性|方法] 
+               获取当前显示文档的 URL ： location.href
+Navigator 对象
+          Navigator 对象包含有关浏览器的信息，通常用于检测浏览器与操作系统的版本。
+                    appCodeName：浏览器代码名的字符串表示；
+                    appName：返回浏览器的名称；
+                    appVersion：返回浏览器的平台和版本信息；
+                    platform：返回运行浏览器的操作系统平台；
+                    userAgent：返回由客户机发送服务器的 user-agent 头部的值
+screen 对象
+          screen对象用于获取用户的屏幕信息。
+          语法：window.screen.属性
+               availHeight:窗口可以使用的屏幕高度，单位像素；
+               availWidth：窗口可以使用的屏幕宽度，单位像素；
+               colorDepth：用户浏览器表示的颜色位数，通常2为32位（每像素的位数）；
+               pixelDepth：用户浏览器表示的颜色位数，通常为32位（每像素的位数）（IE不支持此属性）；
+               height：屏幕的高度，单位像素；
+               width：屏幕的宽度，单位像素；
+              
             
             
             
